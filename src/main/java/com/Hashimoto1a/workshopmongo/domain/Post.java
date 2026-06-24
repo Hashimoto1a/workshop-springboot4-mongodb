@@ -2,9 +2,12 @@ package com.Hashimoto1a.workshopmongo.domain;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.Hashimoto1a.workshopmongo.dto.AuthorDTO;
@@ -77,10 +80,11 @@ public class Post implements Serializable{
 		return author;
 	}
 
-
 	public void setAuthor(AuthorDTO author) {
 		this.author = author;
 	}
+	
+
 
 	@Override
 	public int hashCode() {
@@ -99,6 +103,8 @@ public class Post implements Serializable{
 		Post other = (Post) obj;
 		return Objects.equals(id, other.id);
 	}
+
+
 
 
 
